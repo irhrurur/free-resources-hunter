@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Resources Hunter</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f7fb;--card:#fff;--tx:#14182b;--mu:#5d6480;--bd:#e2e5f0;--ac:#4f46e5;--ok:#0f9d58;--wa:#b7791f;--er:#d93025;--gr:#6b7280}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1020;--card:#171a30;--tx:#eceefb;--mu:#9aa1c4;--bd:#2a2e4d;--ac:#8b86ff;--ok:#43d18a;--wa:#f0b64a;--er:#ff6b60;--gr:#9ca3af}}
+:root[data-theme=dark]{--bg:#0e1020;--card:#171a30;--tx:#eceefb;--mu:#9aa1c4;--bd:#2a2e4d;--ac:#8b86ff;--ok:#43d18a;--wa:#f0b64a;--er:#ff6b60;--gr:#9ca3af}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:14px}
+h1{font-size:22px;margin:4px 0}h2{font-size:16px;margin:18px 0 8px}
+.sub{color:var(--mu);font-size:13px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+button,select,input{font:inherit;color:inherit}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:9px 14px;font-weight:600}
+.chip{border:1px solid var(--bd);background:var(--card);border-radius:999px;padding:6px 12px;font-size:13px;white-space:nowrap}
+.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.row{display:flex;gap:6px;overflow-x:auto;padding:4px 0;scrollbar-width:none}
+input[type=search]{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--card)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px;text-align:center}
+.stat b{display:block;font-size:20px}.stat span{font-size:11px;color:var(--mu)}
+.note{background:var(--card);border:1px dashed var(--wa);border-radius:12px;padding:10px 12px;font-size:13px;margin:10px 0}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px;margin:10px 0}
+.h{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.h a.t{font-weight:700;font-size:16px;color:var(--tx);text-decoration:none}
+.badge{font-size:11px;font-weight:700;border-radius:6px;padding:2px 7px;color:#fff;white-space:nowrap}
+.VERIFIED{background:var(--ok)}.UNCONFIRMED{background:var(--wa)}.EXPIRED{background:var(--gr)}.FAILED{background:var(--er)}
+.tag{font-size:11px;border:1px solid var(--bd);border-radius:6px;padding:1px 6px;color:var(--mu)}
+.grid{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:13px;margin:8px 0}
+.grid dt{color:var(--mu)}.grid dd{margin:0}
+.flag{font-size:12.5px;color:var(--wa);margin:4px 0}
+.src{font-size:12.5px}.src a{color:var(--ac)}
+.star{background:none;border:0;font-size:22px;line-height:1;color:var(--mu)}.star.on{color:#f5b301}
+.empty{color:var(--mu);font-size:13px;padding:10px;text-align:center}
+.exp{font-size:12.5px;font-weight:600}
+</style></head><body><main>
+<div class="top"><div><h1>🔎 Free Resources Hunter</h1><div class="sub" id="meta"></div></div><button class="btn" id="ref">Refresh</button></div>
+<div class="note" id="disc"><b>How this works (read first):</b> a GitHub Action runs collect.py every 6 hours and updates data.json. It checks that sites respond, reads public domain registration dates (RDAP) and lists new public GitHub repos as <i>candidates</i>. Original entries were collected by Claude on <b>2026-10-11</b> from public sources. <b>No endpoint has been test-called</b>, so nothing is marked VERIFIED. Dates shown are when this app first saw an entry or when a source last said it re-checked it — <u>not</u> a provider launch date (domain/repo dates appear only after the robot has read them). Test calls are not included, so VERIFIED stays empty.</div>
+<div class="stats" id="stats"></div>
+<input type="search" id="q" placeholder="Search providers, models, requirements…">
+<div class="row" id="fAge"></div><div class="row" id="fCat"></div><div class="row" id="fSt"></div>
+<h2>✅ Successfully tested free access</h2><div id="tested"></div>
+<h2 id="ft">Newest first</h2><div id="feed"></div>
+<p class="sub">Contents come from third-party directories and blogs; verify on the provider's official page before relying on any limit. Flags explain doubts, not accusations.</p>
+</main>
+<script>
+let D=[];
+const $=s=>document.querySelector(s);
+let fav=new Set();try{fav=new Set(JSON.parse(localStorage.getItem("frh_fav")||"[]"))}catch(e){}
+const S={age:"all",cat:"all",st:"all",q:"",fav:false};
+const AGES=[["all","All"],["1","Today"],["3","3 days"],["7","7 days"]],CATS=[["all","All types"],["claude","Claude"],["llm","Other LLMs"],["vision","Vision"],["coding","Coding"],["compute","Cloud compute"]],STS=[["all","Any status"],["VERIFIED","Verified"],["UNCONFIRMED","Unconfirmed"],["EXPIRED","Expired"],["fav","★ Favorites"]];
+const dd=s=>Math.floor((Date.parse(new Date().toISOString().slice(0,10))-Date.parse(s))/864e5);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const key=d=>d.n.toLowerCase().replace(/\(.*?\)|[^a-z0-9]/g,"").replace(/(free|tier|api|credit)/g,"");
+function chips(id,list,k){$(id).innerHTML=list.map(([v,l])=>`<button class="chip ${S[k]==v?"on":""}" data-k="${k}" data-v="${v}">${l}</button>`).join("")}
+function card(d){const e=d.exp?(()=>{const n=-dd(d.exp);return `<div class="exp" style="color:var(--${n<0?"er":n<30?"wa":"mu"})">⏳ ${n<0?"Expired "+(-n)+" d ago":"Expires "+d.exp+" ("+n+" d left)"}</div>`})():"";
+return `<div class="card"><div class="h"><div><a class="t" href="${d.site}" target="_blank" rel="noopener">${esc(d.n)}</a><div style="margin-top:4px;display:flex;gap:5px;flex-wrap:wrap"><span class="badge ${d.st}">${d.st}</span><span class="tag">${d.cat}</span><span class="tag">${d.dup?"possible duplicate":"newly discovered"}</span></div></div><button class="star ${fav.has(d.id)?"on":""}" data-f="${d.id}">${fav.has(d.id)?"★":"☆"}</button></div>
+<dl class="grid"><dt>Type</dt><dd>${esc(d.kind)}</dd><dt>Models/HW</dt><dd>${esc(d.models)}</dd><dt>Free quota</dt><dd>${esc(d.quota)}</dd><dt>Reset</dt><dd>${esc(d.reset)}</dd><dt>Requires</dt><dd>${esc(d.req)}</dd><dt>Format</dt><dd>${esc(d.fmt)}</dd><dt>First seen here</dt><dd>${d.added}</dd><dt>Source checked</dt><dd>${d.src}</dd><dt>Domain/repo age</dt><dd>${d.domainRegistered?"domain registered "+d.domainRegistered:d.repoCreated?"repo created "+d.repoCreated:"not checked"}</dd></dl>${e}
+${d.fl.map(f=>`<div class="flag">⚠ ${esc(f)}</div>`).join("")}
+<div class="src">Evidence: ${d.ev.map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener">${esc(l)}</a>`).join(" · ")} · Last test: never run</div></div>`}
+function render(){
+const seen={};D.forEach(d=>{const k=key(d);(seen[k]=seen[k]||[]).push(d)});D.forEach(d=>d.dup=seen[key(d)].length>1);
+const q=S.q.toLowerCase();
+let L=D.filter(d=>(S.age=="all"||dd(d.added)<S.age)&&(S.cat=="all"||d.cat==S.cat)&&(S.st=="all"||(S.st=="fav"?fav.has(d.id):d.st==S.st))&&(!q||JSON.stringify(d).toLowerCase().includes(q)));
+L.sort((a,b)=>b.added.localeCompare(a.added)||b.src.localeCompare(a.src));
+$("#feed").innerHTML=L.length?L.map(card).join(""):'<div class="empty">Nothing matches. Vision/coding entries are sparse because only a few sources were searched.</div>';
+const T=D.filter(d=>d.st=="VERIFIED");
+$("#tested").innerHTML=T.length?T.map(card).join(""):'<div class="empty">Empty on purpose: no free endpoint has passed a real test call yet. Add provider-issued test keys on a server to fill this.</div>';
+$("#stats").innerHTML=[[D.length,"tracked"],[D.filter(d=>dd(d.added)<7).length,"new (7d)"],[T.length,"tested"],[D.filter(d=>d.fl.length).length,"flagged"]].map(([n,l])=>`<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
+chips("#fAge",AGES,"age");chips("#fCat",CATS,"cat");chips("#fSt",STS,"st");
+$("#meta").textContent="Last refreshed "+new Date().toLocaleString()+" · "+L.length+" shown";}
+document.addEventListener("click",e=>{const c=e.target.closest("[data-k]"),f=e.target.closest("[data-f]");
+if(c){S[c.dataset.k]=c.dataset.v;render()}
+if(f){const i=+f.dataset.f;fav.has(i)?fav.delete(i):fav.add(i);try{localStorage.setItem("frh_fav",JSON.stringify([...fav]))}catch(x){}render()}});
+$("#q").addEventListener("input",e=>{S.q=e.target.value;render()});
+$("#ref").onclick=()=>{render();$("#disc").scrollIntoView({behavior:"smooth"});$("#ref").textContent="Rechecked ages & expiry";setTimeout(()=>$("#ref").textContent="Refresh",2000)};
+fetch("data.json",{cache:"no-store"}).then(r=>r.json()).then(j=>{D=j.items;render()}).catch(()=>{$("#feed").innerHTML="<div class=empty>Could not load data.json</div>"});render();
+</script></body></html>

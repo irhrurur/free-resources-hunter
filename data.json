@@ -1,0 +1,487 @@
+{
+ "updated": "2026-10-11T00:00:00Z",
+ "items": [
+  {
+   "n": "Google Gemini API",
+   "site": "https://ai.google.dev",
+   "cat": "llm",
+   "kind": "Own API",
+   "models": "Gemini family (model IDs not checked)",
+   "quota": "Permanent free tier; exact numbers shown only in AI Studio per project",
+   "reset": "not published",
+   "req": "Card: none reported",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Directory (re-read 2026-07-25)",
+     "https://github.com/xyzs996/free-llm-api/discussions/2"
+    ],
+    [
+     "Hub wiki (2026-10-08)",
+     "https://github.com/pacocartones/free-llm-api-hub/wiki"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-07-25",
+   "id": 0,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Z.AI (GLM)",
+   "site": "https://z.ai",
+   "cat": "llm",
+   "kind": "Own API",
+   "models": "GLM-4.7-Flash, GLM-4.5-Flash (listed at $0)",
+   "quota": "$0 pricing, no per-minute figure published",
+   "reset": "n/a",
+   "req": "Card: none reported",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Directory",
+     "https://github.com/xyzs996/free-llm-api/discussions/2"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-07-25",
+   "id": 1,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Mistral AI",
+   "site": "https://mistral.ai",
+   "cat": "llm",
+   "kind": "Own API",
+   "models": "not checked",
+   "quota": "Permanent free tier, no public per-minute figure",
+   "reset": "not published",
+   "req": "Card: none reported",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Directory",
+     "https://github.com/xyzs996/free-llm-api/discussions/2"
+    ],
+    [
+     "Hub wiki",
+     "https://github.com/pacocartones/free-llm-api-hub/wiki"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-07-25",
+   "id": 2,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Alibaba Cloud Model Studio (Qwen)",
+   "site": "https://www.alibabacloud.com",
+   "cat": "llm",
+   "kind": "Own API",
+   "models": "Qwen (IDs not checked)",
+   "quota": "Free tier, limits not published publicly",
+   "reset": "not published",
+   "req": "Card: none reported",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Directory",
+     "https://github.com/xyzs996/free-llm-api/discussions/2"
+    ]
+   ],
+   "fl": [
+    "A blog says docs are Chinese-first with low limits (secondary source)."
+   ],
+   "src": "2026-07-25",
+   "id": 3,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Moonshot (Kimi)",
+   "site": "https://platform.moonshot.ai",
+   "cat": "llm",
+   "kind": "Own API",
+   "models": "Kimi (IDs not checked)",
+   "quota": "Free tier, no public figure",
+   "reset": "not published",
+   "req": "Card: none reported",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Directory",
+     "https://github.com/xyzs996/free-llm-api/discussions/2"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-07-25",
+   "id": 4,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Novita",
+   "site": "https://novita.ai",
+   "cat": "llm",
+   "kind": "Likely hosts open models (not checked)",
+   "models": "not checked",
+   "quota": "Free tier, no public figure",
+   "reset": "not published",
+   "req": "Card: none reported",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Directory",
+     "https://github.com/xyzs996/free-llm-api/discussions/2"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-07-25",
+   "id": 5,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Pollinations.AI",
+   "site": "https://pollinations.ai",
+   "cat": "vision",
+   "kind": "Not checked",
+   "models": "not checked",
+   "quota": "Free to call, no public figure",
+   "reset": "not published",
+   "req": "Card: none reported",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Directory",
+     "https://github.com/xyzs996/free-llm-api/discussions/2"
+    ]
+   ],
+   "fl": [
+    "Category guessed from name; confirm which models it offers."
+   ],
+   "src": "2026-07-25",
+   "id": 6,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Ollama Cloud",
+   "site": "https://ollama.com",
+   "cat": "llm",
+   "kind": "Hosts open models (not checked)",
+   "models": "not checked",
+   "quota": "Free tier, no public figure",
+   "reset": "not published",
+   "req": "Card: none reported",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Directory",
+     "https://github.com/xyzs996/free-llm-api/discussions/2"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-07-25",
+   "id": 7,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "OpenRouter :free models",
+   "site": "https://openrouter.ai",
+   "cat": "llm",
+   "kind": "Proxy / aggregator of other providers",
+   "models": "Rotating set with :free suffix (16 on 2026-10-08, count fluctuates)",
+   "quota": "Varies per model",
+   "reset": "varies",
+   "req": "Hub says no card for free models; ToS bars reselling access",
+   "fmt": "OpenAI-style (not checked)",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Hub wiki (2026-10-08)",
+     "https://github.com/pacocartones/free-llm-api-hub/wiki"
+    ]
+   ],
+   "fl": [
+    "Free requests may be queued behind paid ones (secondary blog)."
+   ],
+   "src": "2026-10-08",
+   "id": 8,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Groq",
+   "site": "https://console.groq.com",
+   "cat": "llm",
+   "kind": "Own API",
+   "models": "not checked",
+   "quota": "Free tier",
+   "reset": "not checked",
+   "req": "Listed as no-card",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Hub wiki",
+     "https://github.com/pacocartones/free-llm-api-hub/wiki"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-10-08",
+   "id": 9,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Cloudflare Workers AI",
+   "site": "https://developers.cloudflare.com/workers-ai",
+   "cat": "llm",
+   "kind": "Hosts open models",
+   "models": "not checked",
+   "quota": "Free tier",
+   "reset": "not checked",
+   "req": "Listed as no-card",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Hub wiki",
+     "https://github.com/pacocartones/free-llm-api-hub/wiki"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-10-08",
+   "id": 10,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Typhoon (opentyphoon.ai)",
+   "site": "https://opentyphoon.ai",
+   "cat": "llm",
+   "kind": "Not checked",
+   "models": "not checked",
+   "quota": "Free API key on sign-up",
+   "reset": "not checked",
+   "req": "Not checked",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Hub wiki (2026-10-08)",
+     "https://github.com/pacocartones/free-llm-api-hub/wiki"
+    ]
+   ],
+   "fl": [
+    "Less famous provider: confirm ownership and terms before signing up."
+   ],
+   "src": "2026-10-08",
+   "id": 11,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "AI21 Labs trial credit",
+   "site": "https://www.ai21.com",
+   "cat": "llm",
+   "kind": "Own API",
+   "models": "AI21 LLMs",
+   "quota": "$10 credit",
+   "reset": "expires after 3 months",
+   "req": "Reported no card",
+   "fmt": "not checked",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Hub wiki",
+     "https://github.com/pacocartones/free-llm-api-hub/wiki"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-10-08",
+   "id": 12,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Anthropic Claude API credit",
+   "site": "https://console.anthropic.com",
+   "cat": "claude",
+   "kind": "Own API",
+   "models": "Claude (IDs not checked here)",
+   "quota": "Sources conflict: one blog says $5 one-time credit, another says no free tier",
+   "reset": "one-time if it exists",
+   "req": "Unclear",
+   "fmt": "Messages API",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "Blog A (credit claim)",
+     "https://www.tkmxai.it.com/prototyping-with-llms-without-a-credit-card"
+    ],
+    [
+     "Blog B (no free tier)",
+     "https://www.tkmxai.it.com/the-free-ai-api-tier-trap"
+    ]
+   ],
+   "fl": [
+    "Two pages on the same low-attribution site contradict each other; ownership unclear. Check Anthropic's own pricing page."
+   ],
+   "src": "2026-07-18",
+   "id": 13,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "GitHub Models (new-user free tier)",
+   "site": "https://github.com/marketplace/models",
+   "cat": "llm",
+   "kind": "Hosts models from several vendors",
+   "models": "n/a",
+   "quota": "Reported closed to new users on 2026-07-30",
+   "reset": "n/a",
+   "req": "n/a",
+   "fmt": "n/a",
+   "st": "EXPIRED",
+   "ev": [
+    [
+     "Directory note",
+     "https://github.com/xyzs996/free-llm-api/discussions/2"
+    ]
+   ],
+   "fl": [
+    "Status comes from a third-party directory, not GitHub."
+   ],
+   "src": "2026-07-25",
+   "exp": "2026-07-30",
+   "id": 14,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Google Colab (free)",
+   "site": "https://colab.research.google.com",
+   "cat": "compute",
+   "kind": "Notebook",
+   "models": "T4 16 GB (CPU possible under high demand)",
+   "quota": "About 15–30 GPU hrs/week, 12 h sessions (blog estimate)",
+   "reset": "weekly",
+   "req": "Google account; no card",
+   "fmt": "Jupyter",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "GMI blog",
+     "https://www.gmicloud.ai/en/blog/best-free-gpu-cloud-options-for-ai-startups-and-researchers"
+    ],
+    [
+     "AIMultiple",
+     "https://aimultiple.com/free-cloud-gpu"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-07-23",
+   "id": 15,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Kaggle Notebooks",
+   "site": "https://www.kaggle.com/code",
+   "cat": "compute",
+   "kind": "Notebook",
+   "models": "T4/P100 16–20 GB",
+   "quota": "About 30 GPU hrs/week, 9 h sessions (blog)",
+   "reset": "weekly",
+   "req": "Account; no card",
+   "fmt": "Jupyter",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "GMI blog",
+     "https://www.gmicloud.ai/en/blog/best-free-gpu-cloud-options-for-ai-startups-and-researchers"
+    ],
+    [
+     "AIMultiple",
+     "https://aimultiple.com/free-cloud-gpu"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-07-23",
+   "id": 16,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Paperspace Gradient free",
+   "site": "https://www.paperspace.com",
+   "cat": "compute",
+   "kind": "Notebook",
+   "models": "M4000 8 GB",
+   "quota": "6 h auto-shutdown, one free notebook at a time",
+   "reset": "idle/shutdown 6 h",
+   "req": "No card for free instances",
+   "fmt": "Jupyter",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "AIMultiple",
+     "https://aimultiple.com/free-cloud-gpu"
+    ]
+   ],
+   "fl": [
+    "Free notebooks are public; platform being folded into DigitalOcean."
+   ],
+   "src": "2026-07-23",
+   "id": 17,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Hugging Face ZeroGPU",
+   "site": "https://huggingface.co",
+   "cat": "compute",
+   "kind": "Inference for Spaces",
+   "models": "Shared GPU",
+   "quota": "About 60 s per GPU call (not for training)",
+   "reset": "per call",
+   "req": "Account",
+   "fmt": "Spaces",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "AIMultiple",
+     "https://aimultiple.com/free-cloud-gpu"
+    ]
+   ],
+   "fl": [],
+   "src": "2026-07-23",
+   "id": 18,
+   "added": "2026-10-11"
+  },
+  {
+   "n": "Oracle Cloud free tier",
+   "site": "https://www.oracle.com/cloud/free/",
+   "cat": "compute",
+   "kind": "Cloud credits",
+   "models": "$300 for 30 days reaches a GPU",
+   "quota": "Always Free is CPU-only per one source",
+   "reset": "30 days",
+   "req": "Typically card/verification (not checked)",
+   "fmt": "VMs",
+   "st": "UNCONFIRMED",
+   "ev": [
+    [
+     "AIMultiple",
+     "https://aimultiple.com/free-cloud-gpu"
+    ],
+    [
+     "GMI guide (claims free A10)",
+     "https://www.gmicloud.ai/en/blog/where-can-i-get-free-gpu-cloud-trials-in-2026-a-complete-guide"
+    ]
+   ],
+   "fl": [
+    "Sources conflict: one claims an always-free A10 GPU, another says none exists. Likely a misleading claim; unverified."
+   ],
+   "src": "2026-07-23",
+   "exp": "2026-11-10",
+   "id": 19,
+   "added": "2026-10-11"
+  }
+ ]
+}
